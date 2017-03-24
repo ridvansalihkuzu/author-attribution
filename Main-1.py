@@ -6,8 +6,6 @@ from sklearn.model_selection import GridSearchCV
 from Author_Identifier import Author_Identifier as AI
 import numpy as np
 
-
-
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portekiz-Python/test/'
 test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portekiz-Python/train/'
 

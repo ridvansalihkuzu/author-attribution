@@ -8,7 +8,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portekiz-Python/test/'
 test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portekiz-Python/train/'
 

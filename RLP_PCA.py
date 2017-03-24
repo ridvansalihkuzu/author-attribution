@@ -5,7 +5,6 @@ from sklearn.preprocessing import  StandardScaler
 from sklearn.base import BaseEstimator, ClassifierMixin
 from RLP import RLP
 
-
 class RLP_PCA(RLP,BaseEstimator, ClassifierMixin):
     def __init__(self, n, L):
         super(RLP_PCA, self).__init__(n, L)
