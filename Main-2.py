@@ -1,5 +1,5 @@
 from Utils import Utils
-from RLP_PCA import RLP_PCA
+from SCAP import SCAP
 from sklearn.preprocessing import label_binarize
 from sklearn.multiclass import OneVsRestClassifier
 from scipy import interp
@@ -7,9 +7,11 @@ from sklearn.metrics import roc_curve, auc
 import numpy as np
 import matplotlib.pyplot as plt
 
+#The Purpose of the main function is to measure author verification performance of SCAP algorithm
+#on the given corpus, Portuguese Authors from newspapers in this case
 
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portuguese-Authors/train/'
-test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/PPortuguese-Authors/test/'
+test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portuguese-Authors/test/'
 
 train_documents, train_classes = Utils.get_corpus(train_folder,1)
 train_documents = np.array(train_documents, dtype=object)
@@ -21,14 +23,14 @@ test_documents = np.array(test_documents, dtype=object)
 print("\n".join("TRAINING: Author {} appears {} times".format(*r) for r in enumerate(np.bincount(train_classes))))
 print("\n".join("TESTING: Author {} appears {} times".format(*r) for r in enumerate(np.bincount(test_classes))))
 
-n_classes=100
+n_classes=10
 
 train_classes = label_binarize(train_classes, classes=np.arange(n_classes))
 test_classes = label_binarize(test_classes, classes=np.arange(n_classes))
 
 
-classifier = OneVsRestClassifier(RLP_PCA(5,2000))
-y_score = classifier.fit(train_documents, train_classes).fit(test_documents)
+classifier = OneVsRestClassifier(SCAP(5,1000))
+y_score = classifier.fit(train_documents, train_classes).decision_function(test_documents)
 # Compute ROC curve and ROC area for each class
 fpr = dict()
 tpr = dict()

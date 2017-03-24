@@ -7,6 +7,9 @@ from sklearn.metrics import classification_report
 from Author_Identifier import Author_Identifier as AI
 import numpy as np
 
+#The Purpose of the main function is to compare author identification performance of profile-based
+# and instance-based approach on Routers English News Corpus - C10 in this case
+
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/C10 yedek/train/'
 test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/C10 yedek/test/'
 
@@ -24,11 +27,11 @@ print("\n".join("TESTING: Author {} appears {} times".format(*r) for r in enumer
 #Validating and testing instance-based authorship attribution approach which is based on TF-IDF weighting of
 #author vector space model followed by latent semantic analysis and extreme learning machine.
 
-parameters = [{'n': [3,4,5],
-               'L': [1000,3000,5000],
-               'alpha': [0.5, 1],
-               'layer':  [100,200,300],
-               'rbf':  [0.5, 1]},]
+parameters = [{'n': [5],
+               'L': [1000],
+               'alpha': [0.5],
+               'layer':  [200],
+               'rbf':  [1]},]
 
 clf = GridSearchCV(AI(n=1, L=1,alpha=1,layer=1,rbf=1), parameters, cv=5, scoring='accuracy')
 clf.fit(train_documents, train_classes)
@@ -51,8 +54,8 @@ print(classification_report(y_true, y_pred, digits=3))
 #Validating and testing profile-based authorship attribution approach which is based on cosine similarity of
 # PCA transformed author vector space model created by recentered local profiles of each author.
 
-parameters = [{'n': [3,4,5],
-               'L': [1000,3000,5000]},]
+parameters = [{'n': [4,5],
+               'L': [1000,5000]},]
 
 clf = GridSearchCV(RLP_PCA(n=1, L=1), parameters, cv=5, scoring='accuracy')
 clf.fit(train_documents, train_classes)

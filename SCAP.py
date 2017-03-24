@@ -57,6 +57,11 @@ class SCAP(BaseEstimator, ClassifierMixin):
         predictions = np.array([self.predict_single(document) for document in documents])
         return predictions
 
+    def decision_function(self, documents):
+        # Decisison Function for the Base Estimator (inherited class)
+        predictions = np.array([self.predict_single(document) for document in documents])
+        return predictions
+
     def predict_single(self, document):
         # Predicts the author of a single document
         # Profile of current document
