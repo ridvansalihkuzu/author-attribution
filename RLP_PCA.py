@@ -17,8 +17,8 @@ class RLP_PCA(RLP,BaseEstimator, ClassifierMixin):
 
     def compare_profiles(self, profile1, profile2):
         # All n-grams in the top L of either profile.
-        v1=Utils.vector_space_represent(Utils.top_L(profile1),self.author_dictionary)
-        v2=Utils.vector_space_represent(Utils.top_L(profile2), self.author_dictionary)
+        v1=Utils.vector_space_represent(Utils.top_L(profile1,self.L),self.author_dictionary)
+        v2=Utils.vector_space_represent(Utils.top_L(profile2,self.L), self.author_dictionary)
         v1=v1.reshape(1,-1)
         v2=v2.reshape(1,-1)
 
