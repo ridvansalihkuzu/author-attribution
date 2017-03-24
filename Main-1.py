@@ -3,11 +3,12 @@ from SCAP import SCAP
 from CNG import CNG
 from RLP_PCA import RLP_PCA
 from sklearn.model_selection import GridSearchCV
+from sklearn.metrics import classification_report
 from Author_Identifier import Author_Identifier as AI
 import numpy as np
 
-train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portuguese-Authors/train/'
-test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/PPortuguese-Authors/test/'
+train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/C10 yedek/train/'
+test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/C10 yedek/test/'
 
 train_documents, train_classes = Utils.get_corpus(train_folder,1)
 train_documents = np.array(train_documents, dtype=object)
@@ -20,6 +21,8 @@ print("\n".join("TRAINING: Author {} appears {} times".format(*r) for r in enume
 print("\n".join("TESTING: Author {} appears {} times".format(*r) for r in enumerate(np.bincount(test_classes))))
 
 
+#Validating and testing instance-based authorship attribution approach which is based on TF-IDF weighting of
+#author vector space model followed by latent semantic analysis and extreme learning machine.
 
 parameters = [{'n': [3,4,5],
                'L': [1000,3000,5000],
@@ -36,6 +39,18 @@ print("The BEST model for Author Identifier found has n={}, L={}, alpha={}, laye
               clf.best_estimator_.rbf,clf.best_score_))
 
 
+model = AI(n=clf.best_estimator_.n, L=clf.best_estimator_.L,alpha=clf.best_estimator_.alpha,
+           rbf=clf.best_estimator_.rbf,layer=clf.best_estimator_.layer)
+model.fit(train_documents, train_classes)
+y_true, y_pred = test_classes, model.predict(test_documents)
+print(classification_report(y_true, y_pred, digits=3))
+
+
+
+
+#Validating and testing profile-based authorship attribution approach which is based on cosine similarity of
+# PCA transformed author vector space model created by recentered local profiles of each author.
+
 parameters = [{'n': [3,4,5],
                'L': [1000,3000,5000]},]
 
@@ -45,6 +60,11 @@ for params, mean_score, scores in clf.grid_scores_:
     print("{}: {:.3f} (+/-{:.3f})".format(params, mean_score, scores.std() / 2))
 print("The BEST model for RLP PCA found has n={}, L={}, score={}"
       .format(clf.best_estimator_.n, clf.best_estimator_.L,clf.best_score_))
+
+model = RLP_PCA(n=clf.best_estimator_.n, L=clf.best_estimator_.L)
+model.fit(train_documents, train_classes)
+y_true, y_pred = test_classes, model.predict(test_documents)
+print(classification_report(y_true, y_pred, digits=3))
 
 
 

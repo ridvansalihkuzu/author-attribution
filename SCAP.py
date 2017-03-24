@@ -45,11 +45,15 @@ class SCAP(BaseEstimator, ClassifierMixin):
         self.classes=classes
         author_documents = ((author, [documents[i] for i in range(len(documents)) if classes[i] == author]) for author in set(classes))
         self.author_profiles = {author: self.create_profile(cur_docs) for author, cur_docs in author_documents}
-        print("Model fitting is completed.")
+        print("Model fitting completed for n={}, L={}"
+              .format(self.n,
+                      self.L,))
 
     def predict(self, documents):
         # Predict which of the authors wrote each of the documents
-        print("Prediction is started.")
+        print("Prediction started for n={}, L={}"
+              .format(self.n,
+                      self.L, ))
         predictions = np.array([self.predict_single(document) for document in documents])
         return predictions
 

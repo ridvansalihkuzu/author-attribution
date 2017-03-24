@@ -35,6 +35,12 @@ class Author_Identifier(BaseEstimator, ClassifierMixin):
 
         self.ELM = ELMClassifier(self.layer, self.alpha, self.rbf,activation_func='multiquadric')
         self.ELM.fit(vector_space, classes)
+        print("Model fitting is completed for n={}, L={}, alpha={}, layer={},rbf={}"
+              .format(self.n,
+                      self.L,
+                      self.alpha,
+                      self.layer,
+                      self.rbf))
 
 
     def create_profile(self, documents):
@@ -58,6 +64,12 @@ class Author_Identifier(BaseEstimator, ClassifierMixin):
         return main_profile
 
     def predict(self, documents):
+        print("Prediction Started for n={}, L={}, alpha={}, layer={},rbf={}"
+              .format(self.n,
+                      self.L,
+                      self.alpha,
+                      self.layer,
+                      self.rbf))
         # Predict which of the authors wrote each of the documents
         predictions = np.array([self.predict_single(document) for document in documents])
         return predictions
