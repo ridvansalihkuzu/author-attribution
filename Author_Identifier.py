@@ -6,7 +6,6 @@ from ELM import ELMClassifier
 from sklearn.feature_extraction.text import TfidfTransformer as TF_IDF
 from sklearn.base import BaseEstimator, ClassifierMixin
 
-
 class Author_Identifier(BaseEstimator, ClassifierMixin):
     def __init__(self, n, L,layer,alpha,rbf):
         self.author_dictionary=None
