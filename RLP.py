@@ -4,7 +4,6 @@ import numpy as np
 from SCAP import SCAP
 from Utils import Utils
 
-
 class RLP(SCAP):
     def __init__(self, n, L):
         super(RLP, self).__init__(n, L)

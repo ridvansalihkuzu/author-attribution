@@ -3,7 +3,6 @@ from sklearn.base import BaseEstimator, ClassifierMixin  # For using scikit-lear
 from collections import defaultdict
 import numpy as np
 from Utils import Utils
-from datetime import datetime
 
 class SCAP(BaseEstimator, ClassifierMixin):
     def __init__(self, n, L):
@@ -46,9 +45,11 @@ class SCAP(BaseEstimator, ClassifierMixin):
         self.classes=classes
         author_documents = ((author, [documents[i] for i in range(len(documents)) if classes[i] == author]) for author in set(classes))
         self.author_profiles = {author: self.create_profile(cur_docs) for author, cur_docs in author_documents}
+        print("Model fitting is completed.")
 
     def predict(self, documents):
         # Predict which of the authors wrote each of the documents
+        print("Prediction is started.")
         predictions = np.array([self.predict_single(document) for document in documents])
         return predictions
 

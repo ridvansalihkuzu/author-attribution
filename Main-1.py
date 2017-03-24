@@ -9,7 +9,6 @@ import numpy as np
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portuguese-Authors/train/'
 test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/PPortuguese-Authors/test/'
 
-
 train_documents, train_classes = Utils.get_corpus(train_folder,1)
 train_documents = np.array(train_documents, dtype=object)
 

@@ -11,7 +11,6 @@ import matplotlib.pyplot as plt
 train_folder = '/Users/ridvansalih/Desktop/Thesis/Data/Portuguese-Authors/train/'
 test_folder = '/Users/ridvansalih/Desktop/Thesis/Data/PPortuguese-Authors/test/'
 
-
 train_documents, train_classes = Utils.get_corpus(train_folder,1)
 train_documents = np.array(train_documents, dtype=object)
 
@@ -29,7 +28,7 @@ test_classes = label_binarize(test_classes, classes=np.arange(n_classes))
 
 
 classifier = OneVsRestClassifier(RLP_PCA(5,2000))
-y_score = classifier.fit(train_documents, train_classes).decision_function(test_documents)
+y_score = classifier.fit(train_documents, train_classes).fit(test_documents)
 # Compute ROC curve and ROC area for each class
 fpr = dict()
 tpr = dict()

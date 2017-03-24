@@ -6,4 +6,3 @@ class CNG(SCAP):
         d1 = np.array([profile1.get(ng, 0.) for ng in ngrams])
         d2 = np.array([profile2.get(ng, 0.) for ng in ngrams])
         return np.mean(4 * np.square((d1 - d2) / (d1 + d2 + 1e-16)))
-

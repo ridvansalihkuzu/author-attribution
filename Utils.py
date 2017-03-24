@@ -4,6 +4,7 @@ import codecs
 import numpy as np
 import math
 
+
 class Utils:
     @staticmethod
     def count_ngrams(document, n, normalise=False):

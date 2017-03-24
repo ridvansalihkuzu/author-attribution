@@ -36,8 +36,6 @@ class Author_Identifier(BaseEstimator, ClassifierMixin):
         self.ELM = ELMClassifier(self.layer, self.alpha, self.rbf,activation_func='multiquadric')
         self.ELM.fit(vector_space, classes)
 
-        return self
-
 
     def create_profile(self, documents):
         # Creates a profile of a document or list of documents.
