@@ -15,8 +15,10 @@ In this project, our instance-based authorship attribution model has following s
 7. Multi-class extreme learning machine is trained with the transformed vector space model in which each author represent a class with his/her documents.
 8. When a text or group of texts from an unknown author are given, the all steps in the attribution model are applied for also them. Thus, extreme learning machine predicts the most likely author of the query texts. 
 
-Rest of the work is explained in the following paper: https://www.dropbox.com/s/oxy0n21wcb29k6l/IET_Biometrics.pdf?dl=0
+Rest of the work is explained in the following paper: https://www.researchgate.net/publication/323631302_Chat_biometrics
 
-The required author corpora for trainings and tests are given on the following links: https://www.dropbox.com/sh/3tdupoxkkjtm3vb/AAAEsEazUw3zocCE0309lpgua?dl=0
+The required author corpora for trainings and tests are given on the following links: https://drive.google.com/drive/folders/0B6vxRRlm7dhbQzZON3EzbTJnZ3M?usp=sharing
+https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
+https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
 
