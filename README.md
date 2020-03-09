@@ -21,7 +21,6 @@ The required author corpora for trainings and tests are given on the following l
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
-% perl Markdown.pl --html4tags foo.text
 
 @article{kuzu2018chat,
   title={Chat biometrics},
