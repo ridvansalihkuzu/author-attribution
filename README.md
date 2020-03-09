@@ -21,6 +21,7 @@ The required author corpora for trainings and tests are given on the following l
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
+# For citing this study:
 ```
 @article{kuzu2018chat,
   title={Chat biometrics},
@@ -30,7 +31,6 @@ https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
   number={5},
   pages={454--466},
   year={2018},
-  publisher={IET}
-}
+  publisher={IET}}
 ```
 
