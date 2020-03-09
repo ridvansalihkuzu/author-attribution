@@ -21,5 +21,5 @@ The required author corpora for trainings and tests are given on the following l
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
-<cite>Tractatus Logico-Philosophicus</cite> was first published in 1921.
+
 
