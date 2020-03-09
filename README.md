@@ -23,3 +23,13 @@ https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
 
 
+@article{kuzu2018chat,
+  title={Chat biometrics},
+  author={Kuzu, R{\i}dvan Salih and Salah, Albert Ali},
+  journal={IET Biometrics},
+  volume={7},
+  number={5},
+  pages={454--466},
+  year={2018},
+  publisher={IET}
+}
