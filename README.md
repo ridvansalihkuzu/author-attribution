@@ -21,7 +21,7 @@ The required author corpora for trainings and tests are given on the following l
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
-
+``
 @article{kuzu2018chat,
   title={Chat biometrics},
   author={Kuzu, R{\i}dvan Salih and Salah, Albert Ali},
@@ -32,3 +32,5 @@ https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
   year={2018},
   publisher={IET}
 }
+```
+
