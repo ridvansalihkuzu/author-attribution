@@ -17,8 +17,12 @@ In this project, our instance-based authorship attribution model has following s
 
 Rest of the work is explained in the following paper: https://www.researchgate.net/publication/323631302_Chat_biometrics
 
-The required author corpora for trainings and tests are given on the following links: https://drive.google.com/drive/folders/0B6vxRRlm7dhbQzZON3EzbTJnZ3M?usp=sharing
+The required author corpora for trainings and tests are given on the following links: 
+
+https://drive.google.com/drive/folders/0B6vxRRlm7dhbQzZON3EzbTJnZ3M?usp=sharing
+
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbeUUwcXdRbnVfdEE?usp=sharing
+
 https://drive.google.com/drive/folders/0B6vxRRlm7dhbckFacTVneUJJbkU?usp=sharing
 
 # For citing this study:
